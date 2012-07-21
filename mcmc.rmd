@@ -1,0 +1,10 @@
+MCMC provides a universal method for estimating the posterior of an unknown distribution.
+
+Start with basic universal sampling methods:
+* Rejection sampling
+
+MCMC methods:
+* Metropolis-Hastings
+* Gibbs sampling
+* Slice sampling
+* Hamiltonian Monte Carlo

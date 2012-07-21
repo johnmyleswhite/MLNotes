@@ -1,0 +1,13 @@
+Because most, if not all, machine learning algorithms can be viewed as minimizing a combination of prediction error penalties and complexity penalties, optimization algorithms are widely needed. Here are some:
+
+* Nelder-Mead
+* Gradient descent
+* L-BFGS
+* Newton's method
+
+If you are interested in learning about optimization, you should read
+
+* Nocedal and Wright
+* Boyd and Vanderbergh
+
+Don't bother with other books until you've mastered the material in those two.
