@@ -192,9 +192,9 @@ N_{p}(X) = ||X||_{p} \triangleq  (\sum_{i = 1}^{m} \sum_{j = 1}^{n} |x_{i, j}|^p
 <p>Thankfully, once you understand norms, we can trivially describe the three fundamental objects of modern statistical theory:</p>
 
 <ul>
-<li>Means</li>
-<li>OLS linear regressions</li>
-<li>SVD&#39;s</li>
+<li>Means: \(\mu^{*} = \arg \min_{\mu} \sum_{i = 1}^{n} ||x_{i} - \mu||_{2}\)</li>
+<li>OLS linear regressions: \(\beta^{*} = \arg \min_{\beta} ||Y - X\beta||_{2}\)</li>
+<li>Rank-\(k\) SVD&#39;s: \(\bar{X}^{*} = \arg \min_{\bar{X}} ||X - \bar{X}||_{2}\), where \(\bar{X}\) has rank \(k\)</li>
 </ul>
 
 <p>The reason for this is simple: almost all of statistical theory can be understand in terms of prediction error minimization: we have (1) a system that generates predictions, (2) a ground truth we want to predict and (3) a measure of the error in our predictions. We typically measure the error in our predictions using a norm of the disprecancy between our predictions and ground truth. The standard algorithms in statistics are simply mechanisms for making out-of-the-box predictions that minimize different errors measured using \(L_{2}\) norms.</p>
@@ -202,20 +202,20 @@ N_{p}(X) = ||X||_{p} \triangleq  (\sum_{i = 1}^{m} \sum_{j = 1}^{n} |x_{i, j}|^p
 <p>Once you master means, OLS and SVD&#39;s, we can move on to:</p>
 
 <ul>
-<li>Medians</li>
-<li>LAD linear regression</li>
-<li>Robust SVD (Correct name?)</li>
+<li>Medians: \(m^{*} = \arg \min_{m} \sum_{i = 1}^{n} ||x_{i} - m||_{1}\)</li>
+<li>LAD linear regression: \(\beta^{*} = \arg \min_{\beta} ||Y - X\beta||_{1}\)</li>
+<li>Robust SVD (Correct name?): \(\bar{X}^{*} = \arg \min_{\bar{X}} ||X - \bar{X}||_{1}\), where \(\bar{X}\) has rank \(k\)</li>
 </ul>
 
 <p>And then after that, we can add penalties to the basic statistical models by penalizing the parameters we fit using these same norms. We then get:</p>
 
 <ul>
-<li>Bayesian inference for means with Normal priors</li>
-<li>Ridge regression</li>
-<li>L2 regularized SVD</li>
-<li>Bayesian inference for medians with Normal priors (Correct prior?)</li>
-<li>LASSO regression</li>
-<li>L1 regularized SVD</li>
+<li>Bayesian inference for means with Normal priors: \(\mu^{*} = \arg \min_{\mu} \sum_{i = 1}^{n} ||x_{i} - \mu||_{2} + \lambda ||\mu||_{2}\)</li>
+<li>Ridge regression: \(\beta^{*} = \arg \min_{\beta} ||Y - X\beta||_{2} + \lambda ||\beta||_{2}\)</li>
+<li>L2 regularized SVD: \(\bar{X}^{*} = \arg \min_{\bar{X}} ||X - \bar{X}||_{2} + \lambda ||\bar{X}||_{2}\), where \(\bar{X}\) has rank \(k\)</li>
+<li>Bayesian inference for medians with Normal priors: \(m^{*} = \arg \min_{m} \sum_{i = 1}^{n} ||x_{i} - m||_{1} + \lambda ||m||_{2}\)</li>
+<li>LASSO regression: \(\arg \min_{\beta} ||Y - X\beta||_{2} + \lambda ||\beta||_{1}\)</li>
+<li>L1 regularized SVD: \(\bar{X}^{*} = \arg \min_{\bar{X}} ||X - \bar{X}||_{2} + \lambda ||\bar{X}||_{1}\), where \(\bar{X}\) has rank \(k\)</li>
 </ul>
 
 <p>We also note that the following models are all special cases of, variations of, or straightforward applications of the standard SVD:</p>

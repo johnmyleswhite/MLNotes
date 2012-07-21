@@ -44,26 +44,26 @@ The squared norms we described above are all special cases in which $p = 2$. But
 
 Thankfully, once you understand norms, we can trivially describe the three fundamental objects of modern statistical theory:
 
-* Means
-* OLS linear regressions
-* SVD's
+* Means: $\mu^{*} = \arg \min_{\mu} \sum_{i = 1}^{n} ||x_{i} - \mu||_{2}$
+* OLS linear regressions: $\beta^{*} = \arg \min_{\beta} ||Y - X\beta||_{2}$
+* Rank-$k$ SVD's: $\bar{X}^{*} = \arg \min_{\bar{X}} ||X - \bar{X}||_{2}$, where $\bar{X}$ has rank $k$
 
 The reason for this is simple: almost all of statistical theory can be understand in terms of prediction error minimization: we have (1) a system that generates predictions, (2) a ground truth we want to predict and (3) a measure of the error in our predictions. We typically measure the error in our predictions using a norm of the disprecancy between our predictions and ground truth. The standard algorithms in statistics are simply mechanisms for making out-of-the-box predictions that minimize different errors measured using $L_{2}$ norms.
 
 Once you master means, OLS and SVD's, we can move on to:
 
-* Medians
-* LAD linear regression
-* Robust SVD (Correct name?)
+* Medians: $m^{*} = \arg \min_{m} \sum_{i = 1}^{n} ||x_{i} - m||_{1}$
+* LAD linear regression: $\beta^{*} = \arg \min_{\beta} ||Y - X\beta||_{1}$
+* Robust SVD (Correct name?): $\bar{X}^{*} = \arg \min_{\bar{X}} ||X - \bar{X}||_{1}$, where $\bar{X}$ has rank $k$
 
 And then after that, we can add penalties to the basic statistical models by penalizing the parameters we fit using these same norms. We then get:
 
-* Bayesian inference for means with Normal priors
-* Ridge regression
-* L2 regularized SVD
-* Bayesian inference for medians with Normal priors (Correct prior?)
-* LASSO regression
-* L1 regularized SVD
+* Bayesian inference for means with Normal priors: $\mu^{*} = \arg \min_{\mu} \sum_{i = 1}^{n} ||x_{i} - \mu||_{2} + \lambda ||\mu||_{2}$
+* Ridge regression: $\beta^{*} = \arg \min_{\beta} ||Y - X\beta||_{2} + \lambda ||\beta||_{2}$
+* L2 regularized SVD: $\bar{X}^{*} = \arg \min_{\bar{X}} ||X - \bar{X}||_{2} + \lambda ||\bar{X}||_{2}$, where $\bar{X}$ has rank $k$
+* Bayesian inference for medians with Normal priors: $m^{*} = \arg \min_{m} \sum_{i = 1}^{n} ||x_{i} - m||_{1} + \lambda ||m||_{2}$
+* LASSO regression: $\arg \min_{\beta} ||Y - X\beta||_{2} + \lambda ||\beta||_{1}$
+* L1 regularized SVD: $\bar{X}^{*} = \arg \min_{\bar{X}} ||X - \bar{X}||_{2} + \lambda ||\bar{X}||_{1}$, where $\bar{X}$ has rank $k$
 
 We also note that the following models are all special cases of, variations of, or straightforward applications of the standard SVD:
 
