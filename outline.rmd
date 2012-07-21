@@ -1,0 +1,39 @@
+Norms:
+
+* Absolute Value
+* Euclidean Norm
+* $L_{p}$ Norm
+* Frobenius Norm
+
+Bases:
+
+* Standard Polynomial Basis
+* Chebyshev Basis
+* Fourier Basis
+* Wavelet Basis
+
+Regression:
+
+* Linear Regression
+* Generalized Additive Model
+* kNN
+* Decision Trees
+* Random Forests
+
+Classification:
+
+* Naive Bayes
+* Logistic Regression
+* kNN
+* Decision Trees
+* Random Forests
+
+Feature Construction:
+
+* Autoencoders
+* Deep Learning
+
+Text Analysis:
+
+* Bag of Words
+* TF-IDF

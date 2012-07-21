@@ -1,0 +1,76 @@
+Often we want to measure the size of some mathematical object. When the object can be built out of real numbers in the way that scalars, vectors and matrices can, then there is a consistent strategy for defining the size of the object as a whole. We will call the size of the object its norm and write the norm of x as $N(x)$ or, more commonly, as $||x||$.
+
+For scalars, we can use absolute values as a measure of size:
+\[
+N(x) = ||x|| \triangleq |x|
+\]
+For reasons that will be clear in a moment, we can also write this in a "more complicated" way:
+\[
+N(x) = ||x|| \triangleq (|x|^2)^{\frac{1}{2}}
+\]
+
+For $n$-dimensional vectors, we can use Euclidean norms as a measure of size:
+\[
+N(x) = ||x|| \triangleq (\sum_{i = 1}^{n} x_{i}^2)^{\frac{1}{2}}
+\]
+Again, we can write this in a "more complicated" way:
+\[
+N(x) = ||x|| \triangleq (\sum_{i = 1}^{n} |x_{i}|^2)^{\frac{1}{2}}
+\]
+
+For $m$-by-$n$ dimensional matrices, we can use what are called Frobenius norms as a measure of size, which we write in the "more complicated" way from the start since you are less likely to be familiar with them in another form:
+\[
+N(X) = ||X|| \triangleq (\sum_{i = 1}^{m} \sum_{j = 1}^{n} |x_{i, j}|^2)^{\frac{1}{2}}
+\]
+
+When these measures of sizes are all presented right next to one another, it becomes clear that they are actually the same mathematical operation given different names depending on the type of object being measured. For any object with extents along $k$ dimensions built up out of real numbers, you sum up the squared entries and then compute the square root. Scalars are a degenerate case in which there are $0$ dimensions.
+
+Note that the operations of squaring and computing square roots occur in all of these models. This is not a deep fact about the essential truths of our universe: we typically perform squaring for mathematical convenience because the resulting norm functions are differentiable. This is not required by any deep meaning of the concept of size: modern statistics and machine learning have moved beyond this requirement and explored a much richer set of norms.
+
+This richer set of norms, which provide a natural extension to the squared norms defined above, consists of the $L_{p}$ norms or the Minkowski $p$-metrics. For scalars, the $L_{p}$ norm is,
+\[
+N_{p}(x) = ||x||_{p} \triangleq (|x|^p)^{\frac{1}{p}}
+\]
+For vectors, the $L_{p}$ norm is,
+\[
+N_{p}(x) = ||x||_{p} \triangleq  (\sum_{i = 1}^{n} |x_{i}|^p)^{\frac{1}{p}}
+\]
+For matrices, the $L_{p}$ norm is
+\[
+N_{p}(X) = ||X||_{p} \triangleq  (\sum_{i = 1}^{m} \sum_{j = 1}^{n} |x_{i, j}|^p)^{\frac{1}{p}}
+\]
+
+The squared norms we described above are all special cases in which $p = 2$. But now that you've seen all the forms of the $L_{p}$ metric, the "more complicated" ways to write things are much more natural than the simpler ways, no?
+
+Thankfully, once you understand norms, we can trivially describe the three fundamental objects of modern statistical theory:
+
+* Means
+* OLS linear regressions
+* SVD's
+
+The reason for this is simple: almost all of statistical theory can be understand in terms of prediction error minimization: we have (1) a system that generates predictions, (2) a ground truth we want to predict and (3) a measure of the error in our predictions. We typically measure the error in our predictions using a norm of the disprecancy between our predictions and ground truth. The standard algorithms in statistics are simply mechanisms for making out-of-the-box predictions that minimize different errors measured using $L_{2}$ norms.
+
+Once you master means, OLS and SVD's, we can move on to:
+
+* Medians
+* LAD linear regression
+* Robust SVD (Correct name?)
+
+And then after that, we can add penalties to the basic statistical models by penalizing the parameters we fit using these same norms. We then get:
+
+* Bayesian inference for means with Normal priors
+* Ridge regression
+* L2 regularized SVD
+* Bayesian inference for medians with Normal priors (Correct prior?)
+* LASSO regression
+* L1 regularized SVD
+
+We also note that the following models are all special cases of, variations of, or straightforward applications of the standard SVD:
+
+* Factor analysis
+* PCA
+* MDS
+* Procrustean analysis
+* More...
+
+Really, predictive error minimization is a universal principle in statistical theory.
