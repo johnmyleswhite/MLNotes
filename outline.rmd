@@ -37,3 +37,39 @@ Text Analysis:
 
 * Bag of Words
 * TF-IDF
+
+Dimensionality Reduction:
+
+* PCA
+* ICA
+* NMF
+
+Regularization:
+
+* L2
+* L1
+* Spike-and-slab
+
+Probability Distributions:
+
+* Normal
+* Gamma
+* Poisson
+* Dirichlet
+* Beta
+* Bernoulli
+* Binomial
+* Cauchy
+* Student's t
+* Snedecor's F
+* 
+
+Hyperparameters:
+
+* Bayesian Optimization hyperparameter tuning methods
+* Sequential Model Based Optimization hyperparameter tuning methods
+
+Hypothesis Testing:
+
+* t-Test
+* Wilcoxon test

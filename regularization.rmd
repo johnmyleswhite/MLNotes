@@ -1,0 +1,39 @@
+Every statistical model performs the following decomposition:
+
+* data = signal + noise
+
+Every statistical model can be fit to data by attempting to minimize the amount of the data that gets labelled as noise. Minimizing prediction error is valuable, but many models in ML also benefit from _regularization_, which involves penalizing the model for being complex in addition to penalizing the model for making errors:
+
+* Unregularized model: Fit model by minimizing prediction error penalty
+* Regularized model: Fit model by minimizing a combination of a prediction error penalty and a complexity penalty
+
+There are many reasons to believe that regularization is valuable, but the best reason of all is empirical: anyone who works with data long enough discovers that the model that fits our training data best is often not the model that predicts held-out test data best.
+
+In practice, regularization is often indistinguishable from replacing MLE's with MAP estimates after including a prior. To see this, consider the problem of maximizing a likelihood function:
+
+\[
+\theta_{MLE} = \arg \max_{\theta} P(D | \theta)
+\]
+
+If one instead attempts to maximize the posterior probability of the data, the solution becomes:
+
+\[
+\theta_{MAP} = \arg \max_{\theta} \frac{P(D | \theta) P(\theta)}{P(D)} = \arg \max_{\theta} \frac{1}{Z} P(D | \theta) P(\theta)
+\]
+
+Because maxima are not shifted by monotonic transformations, we can take logs and remove constants to get:
+
+\[
+\theta_{MAP} = \arg \max_{\theta} \log(P(D | \theta) P(\theta))
+\]
+
+Using the basic properties of logs, this implies that:
+
+\[
+\theta_{MAP} = \arg \max_{\theta} \log(P(D | \theta)) + \log(P(\theta))
+\]
+
+This implies that MAP estimates are penalized MLE's. Indeed, many common regularization schemes can be described using priors over $\theta$:
+
+* Ridge
+* LASSO

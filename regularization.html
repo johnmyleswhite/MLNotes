@@ -145,102 +145,50 @@ hr {
 </head>
 
 <body>
-<p>Norms:</p>
+<p>Every statistical model performs the following decomposition:</p>
 
 <ul>
-<li>Absolute Value</li>
-<li>Euclidean Norm</li>
-<li>\(L_{p}\) Norm</li>
-<li>Frobenius Norm</li>
+<li>data = signal + noise</li>
 </ul>
 
-<p>Bases:</p>
+<p>Every statistical model can be fit to data by attempting to minimize the amount of the data that gets labelled as noise. Minimizing prediction error is valuable, but many models in ML also benefit from <em>regularization</em>, which involves penalizing the model for being complex in addition to penalizing the model for making errors:</p>
 
 <ul>
-<li>Standard Polynomial Basis</li>
-<li>Chebyshev Basis</li>
-<li>Fourier Basis</li>
-<li>Wavelet Basis</li>
+<li>Unregularized model: Fit model by minimizing prediction error penalty</li>
+<li>Regularized model: Fit model by minimizing a combination of a prediction error penalty and a complexity penalty</li>
 </ul>
 
-<p>Regression:</p>
+<p>There are many reasons to believe that regularization is valuable, but the best reason of all is empirical: anyone who works with data long enough discovers that the model that fits our training data best is often not the model that predicts held-out test data best.</p>
+
+<p>In practice, regularization is often indistinguishable from replacing MLE&#39;s with MAP estimates after including a prior. To see this, consider the problem of maximizing a likelihood function:</p>
+
+<p>\[<br/>
+\theta_{MLE} = \arg \max_{\theta} P(D | \theta)<br/>
+\]</p>
+
+<p>If one instead attempts to maximize the posterior probability of the data, the solution becomes:</p>
+
+<p>\[<br/>
+\theta_{MAP} = \arg \max_{\theta} \frac{P(D | \theta) P(\theta)}{P(D)} = \arg \max_{\theta} \frac{1}{Z} P(D | \theta) P(\theta)<br/>
+\]</p>
+
+<p>Because maxima are not shifted by monotonic transformations, we can take logs and remove constants to get:</p>
+
+<p>\[<br/>
+\theta_{MAP} = \arg \max_{\theta} \log(P(D | \theta) P(\theta))<br/>
+\]</p>
+
+<p>Using the basic properties of logs, this implies that:</p>
+
+<p>\[<br/>
+\theta_{MAP} = \arg \max_{\theta} \log(P(D | \theta)) + \log(P(\theta))<br/>
+\]</p>
+
+<p>This implies that MAP estimates are penalized MLE&#39;s. Indeed, many common regularization schemes can be described using priors over \(\theta\):</p>
 
 <ul>
-<li>Linear Regression</li>
-<li>Generalized Additive Model</li>
-<li>kNN</li>
-<li>Decision Trees</li>
-<li>Random Forests</li>
-</ul>
-
-<p>Classification:</p>
-
-<ul>
-<li>Naive Bayes</li>
-<li>Logistic Regression</li>
-<li>kNN</li>
-<li>Decision Trees</li>
-<li>Random Forests</li>
-</ul>
-
-<p>Feature Construction:</p>
-
-<ul>
-<li>Autoencoders</li>
-<li>Deep Learning</li>
-</ul>
-
-<p>Text Analysis:</p>
-
-<ul>
-<li>Bag of Words</li>
-<li>TF-IDF</li>
-</ul>
-
-<p>Dimensionality Reduction:</p>
-
-<ul>
-<li>PCA</li>
-<li>ICA</li>
-<li>NMF</li>
-</ul>
-
-<p>Regularization:</p>
-
-<ul>
-<li>L2</li>
-<li>L1</li>
-<li>Spike-and-slab</li>
-</ul>
-
-<p>Probability Distributions:</p>
-
-<ul>
-<li>Normal</li>
-<li>Gamma</li>
-<li>Poisson</li>
-<li>Dirichlet</li>
-<li>Beta</li>
-<li>Bernoulli</li>
-<li>Binomial</li>
-<li>Cauchy</li>
-<li>Student&#39;s t</li>
-<li>Snedecor&#39;s F</li>
-<li></li>
-</ul>
-
-<p>Hyperparameters:</p>
-
-<ul>
-<li>Bayesian Optimization hyperparameter tuning methods</li>
-<li>Sequential Model Based Optimization hyperparameter tuning methods</li>
-</ul>
-
-<p>Hypothesis Testing:</p>
-
-<ul>
-<li>t-Test</li>
-<li>Wilcoxon test</li>
+<li>Ridge</li>
+<li>LASSO</li>
 </ul>
 
 </body>
