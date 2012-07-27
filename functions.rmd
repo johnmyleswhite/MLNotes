@@ -1,0 +1,6 @@
+Some types of functions that matter:
+
+Continuous
+Differentiable
+Lipschitz
+Sobolev

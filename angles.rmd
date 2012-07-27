@@ -1,0 +1,6 @@
+Just as much of machine learning reduces to thinking about norms, it also frequently reduces to angles. The most obvious example might be cosine similarity, but really that gets at a much family of inner product computations in which norms and angles fully specify a computation. For example, you have:
+
+* Cosine similarity
+* Correlation
+* Covariance -- correlation without normalization
+

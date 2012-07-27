@@ -5,5 +5,5 @@ rmd.files <- files[grepl("rmd", files)]
 
 for (rmd.file in rmd.files)
 {
-  knit2html(rmd.file)
+  try(knit2html(rmd.file))
 }

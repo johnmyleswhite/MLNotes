@@ -37,6 +37,10 @@ Text Analysis:
 
 * Bag of Words
 * TF-IDF
+* LDA
+* LSA
+* pLSA
+* Federalist Papers Analysis
 
 Dimensionality Reduction:
 
@@ -62,7 +66,10 @@ Probability Distributions:
 * Cauchy
 * Student's t
 * Snedecor's F
-* 
+* Power law
+* Log normal
+* Multinomial
+* Inverse Wishart
 
 Hyperparameters:
 
@@ -73,3 +80,67 @@ Hypothesis Testing:
 
 * t-Test
 * Wilcoxon test
+
+Miscallaneous:
+
+* Conditional random fields
+* Support vector machines
+* Maximum entropy
+* Neural networks
+* Ising models
+* Boltzmann machines
+* Restricted Boltzmann machines
+* Perceptrons
+* Boosting
+* Discriminative models vs. generative models
+* IID model
+* Shannon information
+* f-Divergence
+* Entropy
+* KL-Divergence
+* Mixture model
+* Hidden Markov model
+* Latent Dirichlet allocation
+* Mixed membership model
+* Hierarchical model
+* Alternating maximization
+* EM Algorithm
+* Semi-supervised learning
+* Reinforcement learning
+* Bandit algorithms
+* PAC bounds
+* Bayesian network
+* Sentiment analysis
+* Text regression
+Backpropagation
+Case-based reasoning
+Rule-based reasoning
+Gaussian process
+Spline
+Loess
+Density estimation
+KDE
+Histogram
+Vector quantization
+MDL
+Bagging
+Bootstrap
+Jackknife
+Fisher's linear discriminant analysis
+Basis regression
+Polynomial regression
+
+Reinforcement learning:
+
+* Temporal difference learning
+* Q-learning
+* SARSA learning
+
+Association rule learning
+* Apriori algorithm
+
+Clustering:
+ * k-Means
+ * dp-Means
+ * Hierarchical clustering
+ * Single-linkage clustering

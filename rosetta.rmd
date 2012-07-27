@@ -1,0 +1,11 @@
+# Neural Networks to Stats/ML
+
+* Bias <=> Intercept
+* Activation function / Squashing function <=> Link function
+* Weights <=> Coefficients
+* Weight Decay <=> Regularization
+
+* Sigmoid function <=> CDF of Logistic distribution / Inverse logit
+* tanh <=> NA
+
+# Stats to ML

@@ -1,0 +1,11 @@
+Optimization algorithms fall into three categories:
+* Function values only
+* Function values and gradients only
+* Function values and gradients and Hessians
+
+This can be further refined by what the user must supply versus what the algorithm can invent.
+
+Gradient descent
+
+Direction method
+Trust region methods

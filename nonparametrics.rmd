@@ -1,0 +1,20 @@
+Nonparametric Methods:
+
+* Loess
+* Histograms
+* KDE
+* DP models
+* CRP-based models
+* IBP-based models
+* IRF-based models
+* dp-Means
+
+Frequentist nonparametric methods tend to have the desirable property of universal consistency.
+
+Bayesian nonparametric methods typically amount to methods to avoid hard-coding integer-valued parameters in a model. For example:  
+
+* Number of dimensions in latent variable model
+* Number of clusters in mixture model
+
+Bayesian nonparametric methods do _not_ always have this consistency property.
+

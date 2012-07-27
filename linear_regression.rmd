@@ -1,0 +1,7 @@
+# Linear Regression
+
+* OLS
+* LAD
+* GAM
+* Ridge
+* Lasso

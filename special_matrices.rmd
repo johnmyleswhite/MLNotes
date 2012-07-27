@@ -1,0 +1,7 @@
+* Diagonal
+* Upper triangular
+* Lower triangular
+* Symmetric
+* Hermitian
+* Hessian
+* Jacobian
