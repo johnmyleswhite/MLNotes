@@ -1,0 +1,1 @@
+Use a lossy hash to double up features into one bundle. When important features are sparse, this should produce perfect estimates with high probability.

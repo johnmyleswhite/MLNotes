@@ -1,10 +1,29 @@
-MCMC provides a universal method for estimating the posterior of an unknown distribution.
+In Bayesian statistics, all information about unknown quantities is contained in their posterior distribution after conditioning on observed data. If the quanties are denoted $\theta$ and the observed data are denoted $D$, then this quantity is
+\[
+\mathbb{P}(\theta | D) = \frac{\mathbb{P}(D | \theta) \mathbb{P}(\theta)}{\mathbb{P}(D)}
+\]
+While this posterior probability distribution is well-defined mathematically in most cases, it is not computationally usable and is often analytically intractable. There are two problems in particular:
 
-Start with basic universal sampling methods:
+* The denominator, $$\mathbb{P}(D)$$, is often unamenable to mathematical analysis and not computatable because of intractable nested summations. As such, we can learn the density function of the posterior at any given value of $$\theta$$ only up to a constant. That constant is $$\mathbb{P}(D)$$, because $$\mathbb{P}(D)$$ does not vary with $\theta$.
+* Even if we knew the denominator perfectly (which we don't), we still would have no computational tools for drawing samples from this complex probability distribution. The simplest method known for generating samples from a probability distribution involves the inverse CDF of the distribution. We do not have access to the inverse CDF of $$\mathbb{P}(\theta | D)$$: if we did, we would be able to produce $$\mathbb{P}(\theta | D)$$ -- which we just we cannot. So we must employ methods that do not require access to the inverse CDF. The alternative sampling methods we will turn to are universal in that they can be applied anytime we have access to an unnormalized density function (as we do by looking at the numerator in the equation above), but they achieve universality at the expense of substantially increased computation costs.
+
+Here I enumerate some methods for working with probability distributions; I will discuss them in detail in other sections of my notes.
+
+Methods for estimating the expectation of an intractable probability distribution for which we have a (possibly unnormalized) density function:
+
+* Importance sampling
+* Annealed importance sampling
+
+Non-Markov Chain Methods for obtaining samples from a (possibly unnormalized) density function:
+
 * Rejection sampling
 
-MCMC methods:
+Markov Chain methods for obtaining samples from a (possibly unnormalized) density function:
+
 * Metropolis-Hastings
 * Gibbs sampling
 * Slice sampling
 * Hamiltonian Monte Carlo
+* Exact sampling
+
+Interesting questions remain about the convergence rates, diagnostics, reliability, internal consistency vs. external validity, of these methods.
